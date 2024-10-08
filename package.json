@@ -1,0 +1,19 @@
+{
+  "name": "write-my-readme",
+  "version": "1.0.0",
+  "description": "Generates a professional README file based on user input",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristopherP-C/Write-My-README.git"
+  },
+  "author": "Christopher Persaud-Cox",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChristopherP-C/Write-My-README/issues"
+  },
+  "homepage": "https://github.com/ChristopherP-C/Write-My-README#readme"
+}

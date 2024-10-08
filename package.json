@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ChristopherP-C/Write-My-README/issues"
   },
-  "homepage": "https://github.com/ChristopherP-C/Write-My-README#readme"
+  "homepage": "https://github.com/ChristopherP-C/Write-My-README#readme",
+  "dependencies": {
+    "inquirer": "^12.0.0"
+  }
 }

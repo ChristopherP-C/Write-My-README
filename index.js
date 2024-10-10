@@ -71,7 +71,7 @@ const questions = [
         type: `list`,
         name: `licenseType`,
         message: `Please select a license`,
-        choices: [`MIT`, `GPL`, `Apcache 2.0`, `BSD`, `Creative Commons`, `MPL`, `Unlicense`],
+        choices: [`MIT`, `Apcache 2.0`, `BSD 3`, `Creative Commons Attribution 4.0`, `MPL`],
     },
 ];
 

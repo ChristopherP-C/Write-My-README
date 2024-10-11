@@ -129,6 +129,16 @@ const questions = [
         message: `Please select a license`,
         choices: licenseInfo,
     },
+    {
+        type: `input`,
+        name: `gitHub`,
+        message: `Please eneter your GitHub Username`,
+    },
+    {
+        type: `input`,
+        name: `email`,
+        message: `Please enter your preferred email to ccontact you`,
+    },
 ];
 
 // TODO: Create a function to write README file

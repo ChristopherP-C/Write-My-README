@@ -132,7 +132,25 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, markdown) {
+    const dir = './dist';
+    const fullPath = `${dir}/${fileName}`;
+
+    fs.mkdir(dir, { recursive: true }, (err) => {
+        if (err) {
+            console.error(`Could not create directory:`, err);
+            return;
+        }
+
+        fs.writeFile(fullPath, markdown, (err) => {
+            if (err) {
+                console.error(`Could not create README:`, err);
+            } else {
+                console.info(`README file was created in the dist folder!`);
+            }
+        });
+    });
+}
 
 // TODO: Create a function to initialize app
 function init() {
@@ -152,7 +170,7 @@ function init() {
 
     const markdown = generateMarkdown(answers, description, table, licensePart);
 
-    console.log(markdown);
+    writeToFile(`README.md`, markdown);
 });
 // Function call to initialize app
 init();

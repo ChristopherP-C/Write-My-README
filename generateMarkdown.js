@@ -33,6 +33,7 @@ export function renderLicenseSection(answers, licenseLink, licenseBadge) {
   return licensePart;
 }
 
+//function to create table of contents
 export function renderTable(answers) {
   const tableInput = [];
   if (answers.install) tableInput.push(`-[Install](#install)`);
@@ -40,6 +41,16 @@ export function renderTable(answers) {
   if (answers.credits) tableInput.push(`-[Credits](#credits)`);
   if (answers.license) tableInput.push(`-[License](#license)`);
   return tableInput.join(`\n`);
+}
+
+export function renderDescription(answers) {
+  const description = 
+  `## Description
+    ${answers.motive}
+    ${answers.whyMake}
+    ${answers.solved}
+    ${answers.learned}`;
+    return description;
 }
 
 // TODO: Create a function to generate markdown for README

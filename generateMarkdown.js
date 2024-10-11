@@ -33,8 +33,17 @@ export function renderLicenseSection(answers, licenseLink, licenseBadge) {
   return licensePart;
 }
 
+export function renderTable(answers) {
+  const tableInput = [];
+  if (answers.install) tableInput.push(`-[Install](#install)`);
+  if (answers.usage) tableInput.push(`-[Usage](#usage)`);
+  if (answers.credits) tableInput.push(`-[Credits](#credits)`);
+  if (answers.license) tableInput.push(`-[License](#license)`);
+  return tableInput.join(`\n`);
+}
+
 // TODO: Create a function to generate markdown for README
-export function generateMarkdown(data) {
+function generateMarkdown(data) {
   return `# ${data.title}
 
 `;

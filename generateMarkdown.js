@@ -78,6 +78,9 @@ function generateMarkdown(answers, description, table, licensePart) {
 
   ${licensePart}
 
+  Questions? Please contact me at:
+  https://github.com/${answers.gitHub} or ${answers.email}
+
 `;
 }
 

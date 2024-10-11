@@ -2,7 +2,7 @@
 import inquirer from "inquirer";
 import fs from 'fs';
 import { type } from "os";
-import { renderDescription, renderLicenseBadge, renderLicenseLink, renderLicenseSection, renderTable } from "./generateMarkdown.js";
+import generateMarkdown, { renderDescription, renderLicenseBadge, renderLicenseLink, renderLicenseSection, renderTable } from "./generateMarkdown.js";
 
 // TODO: Create an array of questions for user input
 const licenseInfo = [
@@ -89,7 +89,7 @@ const questions = [
     {
         when:(answers) => answers.install,
         type: `input`,
-        name: `insallSteps`,
+        name: `installSteps`,
         message: `Provide step-by-step install instuctions`,
     },
     {
@@ -150,7 +150,9 @@ function init() {
     //creates table of contents
     const table = renderTable(answers);
 
-    console.log(description);
+    const markdown = generateMarkdown(answers, description, table, licensePart);
+
+    console.log(markdown);
 });
 // Function call to initialize app
 init();

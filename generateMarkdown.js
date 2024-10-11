@@ -25,12 +25,17 @@ export function renderLicenseLink(answers) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 export function renderLicenseSection(answers, licenseLink, licenseBadge) {
+  if (answers.license === false) {
+    const licensePart = ``;
+    return licensePart;
+  } else {
   const licensePart =
   `## License
   ${answers.licenseType.title}
   ${licenseBadge}
   [View license here] => (${licenseLink})`;
   return licensePart;
+  }
 }
 
 //function to create table of contents
@@ -54,8 +59,24 @@ export function renderDescription(answers) {
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+function generateMarkdown(answers, description, table, licensePart) {
+  return `# ${answers.title}
+
+  ${description}
+
+  ## Table of Contents
+  ${table}
+
+  ## Installation
+  ${answers.installSteps}
+
+  ## Usage
+  ${answers.usageInfo}
+
+  ## Credits
+  ${answers.creditInfo}
+
+  ${licensePart}
 
 `;
 }

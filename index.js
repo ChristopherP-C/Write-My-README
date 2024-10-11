@@ -2,7 +2,7 @@
 import inquirer from "inquirer";
 import fs from 'fs';
 import { type } from "os";
-import { renderLicenseBadge, renderLicenseLink, renderLicenseSection, renderTable } from "./generateMarkdown.js";
+import { renderDescription, renderLicenseBadge, renderLicenseLink, renderLicenseSection, renderTable } from "./generateMarkdown.js";
 
 // TODO: Create an array of questions for user input
 const licenseInfo = [
@@ -139,7 +139,10 @@ function init() {
 }
 
  inquirer.prompt(questions).then((answers) => {
-    //creates our license information
+    //creates a description
+     const description = renderDescription(answers);
+     
+     //creates our license information
     const licenseBadge = renderLicenseBadge(answers);
     const licenseLink = renderLicenseLink(answers);
     const licensePart = renderLicenseSection(answers, licenseLink, licenseBadge);
@@ -147,7 +150,7 @@ function init() {
     //creates table of contents
     const table = renderTable(answers);
 
-    console.log(table);
+    console.log(description);
 });
 // Function call to initialize app
 init();

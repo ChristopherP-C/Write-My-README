@@ -2,8 +2,52 @@
 import inquirer from "inquirer";
 import fs from 'fs';
 import { type } from "os";
+import { renderLicenseBadge, renderLicenseLink, renderLicenseSection } from "./generateMarkdown.js";
 
 // TODO: Create an array of questions for user input
+const licenseInfo = [
+    {
+        name: `MIT`,
+        value: {
+            title: `MIT`,
+            badge: `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`,
+            link: `https://opensource.org/license/MIT`
+        }
+    },
+    {
+        name: `Apache 2.0`,
+        value: {
+            title: `Apache 2.0`,
+            badge: `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`,
+            link: `https://opensource.org/license/apache-2-0`
+        }
+    },
+    {
+        name: `BSD 3`,
+        value: {
+            title: `BSD 3`,
+            badge: `![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`,
+            link: `https://opensource.org/license/BSD-3-Clause`
+        }
+    },
+    {
+        name: `Creative Commons Attribution 4.0`,
+        value: {
+            title: `Creative Commons Attribution 4.0`,
+            badge: `!![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)`,
+            link: `https://creativecommons.org/licenses/by/4.0/`
+        }
+    },
+    {
+        name: `MPL`,
+        value: {
+            title: `MPL`,
+            badge: `![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`,
+            link: `https://opensource.org/license/MPL-2.0`
+        }
+    },
+]
+
 const questions = [
     {
         //README title prompt
@@ -71,7 +115,7 @@ const questions = [
         type: `list`,
         name: `licenseType`,
         message: `Please select a license`,
-        choices: [`MIT`, `Apcache 2.0`, `BSD 3`, `Creative Commons Attribution 4.0`, `MPL`],
+        choices: licenseInfo,
     },
 ];
 
@@ -82,8 +126,14 @@ function writeToFile(fileName, data) {}
 function init() {
 }
 
-// inquirer.prompt(questions).then((answers) => {
-//     console.log(JSON.stringify(answers, null, `\n`));
-// });
+ inquirer.prompt(questions).then((answers) => {
+    //console.log(answers);
+    const licenseBadge = renderLicenseBadge(answers);
+    const licenseLink = renderLicenseLink(answers);
+    const licensePart = renderLicenseSection(answers, licenseLink, licenseBadge);
+
+    console.log(licensePart);
+    //console.log(JSON.stringify(licensePart, null, `\n`));
+});
 // Function call to initialize app
 init();

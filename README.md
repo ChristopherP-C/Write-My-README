@@ -23,10 +23,14 @@
   npm i
 
   ## Usage
-  initialize the app by running node index in your command line interface within the project folder.From there, answer the prompts displayed, 
+  initialize the app by running node index in your command line interface within the project folder.From there, answer the prompts displayed,
+  
+  ![Screenshot 2024-10-11 224914](https://github.com/user-attachments/assets/8e58278d-d51b-4a59-82e0-60b26f8210f4)
+  
   and your README will be generated in a seperate dist folder, allowing easy editing without replacing your original README
 
-  ![Screenshot 2024-10-11 224914](https://github.com/user-attachments/assets/8e58278d-d51b-4a59-82e0-60b26f8210f4)
+  Watch how to do it here => https://drive.google.com/file/d/1T_xv_72WNiofx_4FP87nwfqu5rbCn337/view?usp=sharing
+
   
   ## Credits
 

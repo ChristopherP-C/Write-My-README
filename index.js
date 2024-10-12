@@ -139,7 +139,7 @@ const questions = [
     {
         type: `input`,
         name: `email`,
-        message: `Please enter your preferred email to ccontact you`,
+        message: `Please enter your preferred email to contact you`,
     },
     {
         type: `confirm`,

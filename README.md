@@ -1,4 +1,4 @@
-# Wrtie-My-README
+# Write-My-README
 
   ## Description
     READMEs are a staple of any project

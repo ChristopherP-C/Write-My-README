@@ -26,7 +26,10 @@
   initialize the app by running node index in your command line interface within the project folder.From there, answer the prompts displayed, 
   and your README will be generated in a seperate dist folder, allowing easy editing without replacing your original README
 
+  ![Screenshot 2024-10-11 224914](https://github.com/user-attachments/assets/8e58278d-d51b-4a59-82e0-60b26f8210f4)
+  
   ## Credits
+
   Code template was provided by University of Minnesota coding bootcamp program
   iquirer package was used. GitHub repo: github.com/SBoudrias/Inquirer.js
 

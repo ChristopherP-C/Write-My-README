@@ -1,5 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // TODO: If there is no license, return an empty string
+//Renders badge
 export function renderLicenseBadge(answers) {
   let licenseBadge = ``;
   if (answers.license === false) {
@@ -31,8 +32,8 @@ export function renderLicenseSection(answers, licenseLink, licenseBadge) {
   } else {
   const licensePart =
   `## License
-  ${answers.licenseType.title}
-  ${licenseBadge}
+  ${answers.licenseType.title}\n
+  ${licenseBadge}\n
   [View license here] => (${licenseLink})`;
   return licensePart;
   }
@@ -41,10 +42,10 @@ export function renderLicenseSection(answers, licenseLink, licenseBadge) {
 //function to create table of contents
 export function renderTable(answers) {
   const tableInput = [];
-  if (answers.install) tableInput.push(`-[Install](#install)`);
-  if (answers.usage) tableInput.push(`-[Usage](#usage)`);
-  if (answers.credits) tableInput.push(`-[Credits](#credits)`);
-  if (answers.license) tableInput.push(`-[License](#license)`);
+  if (answers.install) tableInput.push(`-[Install](#install)\n`);
+  if (answers.usage) tableInput.push(`-[Usage](#usage)\n`);
+  if (answers.credits) tableInput.push(`-[Credits](#credits)\n`);
+  if (answers.license) tableInput.push(`-[License](#license)\n`);
   return tableInput.join(`\n`);
 }
 
@@ -58,8 +59,21 @@ export function renderDescription(answers) {
     return description;
 }
 
+export function renderTest(answers) {
+  if (answers.test === false) {
+    const testArea = ``;
+    return testArea;
+  } else {
+    const testArea = 
+    `## Test
+    ${answers.testInfo}`;
+    return testArea;
+  };
+};
+
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(answers, description, table, licensePart) {
+//generates markdown
+function generateMarkdown(answers, description, table, licensePart, testArea) {
   return `# ${answers.title}
 
   ${description}
@@ -77,6 +91,9 @@ function generateMarkdown(answers, description, table, licensePart) {
   ${answers.creditInfo}
 
   ${licensePart}
+
+  ${testArea}
+
 
   Questions? Please contact me at:
   https://github.com/${answers.gitHub} or ${answers.email}

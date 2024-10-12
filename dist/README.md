@@ -1,10 +1,10 @@
-# Wrtie-My-README
+# Sample
 
   ## Description
-    READMEs are a staple of any project
-    I wanted to be able to create basic templates of a professional README quickly
-    This project allows users to make the basic elements of a professional README in their CLI. This template can then be copied and saved to your official README file
-    While creating this project, I gained knowledge about the inquirer package, and how to use the CLI to create things based on user input
+    This is the motive
+    this is the why
+    this is the what
+    this is what I learned
 
   ## Table of Contents
   -[Install](#install)
@@ -17,13 +17,13 @@
 
 
   ## Installation
-  npm i
+  install my project
 
   ## Usage
-  initialize the app by running node index in your command line interface within the project folder.From there, answer the prompts displayed, and your README will be generated in a seperate dist folder, allowing easy editing without replacing your original README
+  run my sample
 
   ## Credits
-  Code was provided from U of M coding bootcamp program
+  me, myself, I
 
   ## License
   MIT
@@ -32,9 +32,10 @@
 
   [View license here] => (https://opensource.org/license/MIT)
 
-  
+  ## Test
+    test this sample
 
 
   Questions? Please contact me at:
-  https://github.com/ChristopherP-C or christopherp.c.2day@gmail.com
+  https://github.com/sampleName or sample@email.com
 
